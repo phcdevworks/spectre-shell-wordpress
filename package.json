@@ -1,0 +1,52 @@
+{
+  "name": "vite-template-spectre-wordpress",
+  "version": "0.0.1",
+  "description": "Vite template for WordPress theme development with TypeScript and Tailwind CSS 4",
+  "type": "module",
+  "keywords": [
+    "vite-template",
+    "vite",
+    "wordpress",
+    "wordpress-theme",
+    "tailwindcss",
+    "typescript",
+    "phcdevworks",
+    "spectre"
+  ],
+  "author": "PHCDevworks",
+  "license": "MIT",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/phcdevworks"
+    },
+    {
+      "type": "buymeacoffee",
+      "url": "https://buymeacoffee.com/phcdevworks"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phcdevworks/vite-template-spectre-wordpress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phcdevworks/vite-template-spectre-wordpress/issues"
+  },
+  "homepage": "https://phcdevworks.com",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "@phcdevworks/spectre-ui": "^0.4.1"
+  }
+}

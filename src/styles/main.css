@@ -1,0 +1,12 @@
+/* Main Stylesheet */
+@import 'tailwindcss';
+
+/* Optional: Spectre UI */
+/* @import "@phcdevworks/spectre-ui/base.css"; */
+/* @import "@phcdevworks/spectre-ui/components.css"; */
+/* @import "@phcdevworks/spectre-ui/utilities.css"; */
+
+/* Base Styles */
+:root {
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
