@@ -9,6 +9,7 @@ export default defineConfig({
     outDir: 'spectre-theme/dist',
     emptyOutDir: true,
     manifest: true,
+    sourcemap: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/js/main.ts'),
