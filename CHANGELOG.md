@@ -45,19 +45,19 @@ All notable changes to this project will be documented here. The format follows 
 - Theme-specific README in `spectre-theme/` folder ([8704a25]).
 - Source-specific README in `src/` folder ([8704a25]).
 
-[unreleased]: https://github.com/phcdevworks/vite-template-spectre-wordpress/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/phcdevworks/vite-template-spectre-wordpress/tree/v0.0.1
-[8704a25]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/8704a25
-[e005b39]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/e005b39
-[6202054]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/6202054
-[1fb4ab3]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/1fb4ab3
-[417b4b4]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/417b4b4
-[4f8ddbb]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/4f8ddbb
-[7b5b0ad]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/7b5b0ad
-[01491e8]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/01491e8
-[0754ae2]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/0754ae2
-[b5cf594]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/b5cf594
-[bba2b67]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/bba2b67
-[a38feba]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/a38feba
-[2e7c5e4]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/2e7c5e4
-[fe734ee]: https://github.com/phcdevworks/vite-template-spectre-wordpress/commit/fe734ee
+[unreleased]: https://github.com/phcdevworks/spectre-shell-wordpress/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/phcdevworks/spectre-shell-wordpress/tree/v0.0.1
+[8704a25]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/8704a25
+[e005b39]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/e005b39
+[6202054]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/6202054
+[1fb4ab3]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/1fb4ab3
+[417b4b4]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/417b4b4
+[4f8ddbb]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/4f8ddbb
+[7b5b0ad]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/7b5b0ad
+[01491e8]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/01491e8
+[0754ae2]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/0754ae2
+[b5cf594]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/b5cf594
+[bba2b67]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/bba2b67
+[a38feba]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/a38feba
+[2e7c5e4]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/2e7c5e4
+[fe734ee]: https://github.com/phcdevworks/spectre-shell-wordpress/commit/fe734ee

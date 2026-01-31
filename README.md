@@ -1,4 +1,4 @@
-# @phcdevworks/vite-template-spectre-wordpress
+# @phcdevworks/spectre-shell-wordpress
 
 A reusable template for building modern WordPress themes with Vite, TypeScript, and Tailwind CSS 4. Features HMR, manifest-based asset loading, and seamless dev/prod mode switching for rapid WordPress theme development.
 
@@ -6,7 +6,7 @@ A reusable template for building modern WordPress themes with Vite, TypeScript, 
 
 ## Overview
 
-`@phcdevworks/vite-template-spectre-wordpress` is a starter template that brings modern frontend tooling to WordPress theme development. It uses Vite for fast builds and HMR, TypeScript for type safety, and Tailwind CSS 4 for utility-first styling.
+`@phcdevworks/spectre-shell-wordpress` is a starter template that brings modern frontend tooling to WordPress theme development. It uses Vite for fast builds and HMR, TypeScript for type safety, and Tailwind CSS 4 for utility-first styling.
 
 - ✅ Vite-powered development with instant HMR
 - ✅ TypeScript for type-safe theme development
@@ -19,8 +19,8 @@ A reusable template for building modern WordPress themes with Vite, TypeScript, 
 
 ```bash
 # Clone or use this template
-git clone https://github.com/phcdevworks/vite-template-spectre-wordpress.git
-cd vite-template-spectre-wordpress
+git clone https://github.com/phcdevworks/spectre-shell-wordpress.git
+cd spectre-shell-wordpress
 
 # Install dependencies
 npm install

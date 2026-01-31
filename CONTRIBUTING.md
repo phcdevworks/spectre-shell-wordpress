@@ -71,8 +71,8 @@ WordPress themes never ship raw source files—only compiled assets from `dist/`
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/phcdevworks/vite-template-spectre-wordpress.git
-cd vite-template-spectre-wordpress
+git clone https://github.com/phcdevworks/spectre-shell-wordpress.git
+cd spectre-shell-wordpress
 ```
 
 2. Install dependencies:
@@ -92,7 +92,7 @@ npm run dev
 ## Project Structure
 
 ```
-vite-template-spectre-wordpress/
+spectre-shell-wordpress/
 ├── src/
 │   ├── js/
 │   │   └── main.ts          # JavaScript entry point

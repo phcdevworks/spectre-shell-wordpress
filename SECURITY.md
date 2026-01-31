@@ -22,7 +22,7 @@ If you discover a security vulnerability, please **DO NOT** open a public issue.
 
 ### How to Report
 
-**Preferred method**: Use [GitHub Security Advisories](https://github.com/phcdevworks/vite-template-spectre-wordpress/security/advisories/new) to privately report vulnerabilities
+**Preferred method**: Use [GitHub Security Advisories](https://github.com/phcdevworks/spectre-shell-wordpress/security/advisories/new) to privately report vulnerabilities
 
 **Alternative methods**:
 
@@ -88,7 +88,7 @@ This policy does **NOT** cover:
 
 For security-related questions that aren't vulnerabilities:
 
-- Open a [GitHub Discussion](https://github.com/phcdevworks/vite-template-spectre-wordpress/discussions)
+- Open a [GitHub Discussion](https://github.com/phcdevworks/spectre-shell-wordpress/discussions)
 - Tag maintainers in relevant issues
 
 Thank you for helping keep this template and our community safe!
