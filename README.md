@@ -1,12 +1,23 @@
 # @phcdevworks/spectre-shell-wordpress
 
-A reusable template for building modern WordPress themes with Vite, TypeScript, and Tailwind CSS 4. Features HMR, manifest-based asset loading, and seamless dev/prod mode switching for rapid WordPress theme development.
+### **The WordPress Shell (Layer 6 of the Spectre 8-Layer Arsenal)**
 
-🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)**
+`@phcdevworks/spectre-shell-wordpress` is a reusable template for building modern, high-performance WordPress themes. It acts as the "Organs" layer, providing the CMS-specific structure and integration logic for the Spectre ecosystem.
 
-## Overview
+🤝 **[Contributing Guide](CONTRIBUTING.md)** | 📝 **[Changelog](CHANGELOG.md)** | 🏛️ **[Spectre Arsenal](https://github.com/phcdevworks)**
 
-`@phcdevworks/spectre-shell-wordpress` is a starter template that brings modern frontend tooling to WordPress theme development. It uses Vite for fast builds and HMR, TypeScript for type safety, and Tailwind CSS 4 for utility-first styling.
+---
+
+## 🏗️ Core Architecture
+
+This package is the **CMS Integration Layer**. It bridges modern frontend tooling (Vite, TS, Tailwind 4) with the WordPress theme hierarchy, ensuring Spectre standards are maintained in a CMS environment.
+
+- 🐘 **WordPress Native**: Full support for standard PHP templates and functions.
+- ⚡ **Vite-Powered**: Instant HMR and optimized production builds.
+- 🌫️ **Manifest-Based Assets**: Reliable cache-busting and asset loading.
+- 🎨 **Tailwind 4 Ready**: Pre-configured for the latest utility-first styling.
+
+---
 
 - ✅ Vite-powered development with instant HMR
 - ✅ TypeScript for type-safe theme development
@@ -309,13 +320,19 @@ interface ImportMeta {
 }
 ```
 
-## Part of the Spectre Suite
+---
 
-- **Spectre Tokens** - Design token foundation
-- **Spectre UI** - Core styling layer
-- **Spectre Shell WordPress** - WordPress theme template (this package)
-- **Spectre Blocks** - WordPress block library
-- **Spectre Astro** - Astro integration
+## 🏛️ The Spectre Suite Hierarchy
+
+Spectre is built on a non-negotiable hierarchy to prevent style leakage and duplication:
+
+1.  **Layer 1: DNA** ([@phcdevworks/spectre-tokens](https://github.com/phcdevworks/spectre-tokens)) – Design values.
+2.  **Layer 2: Blueprint** ([@phcdevworks/spectre-ui](https://github.com/phcdevworks/spectre-ui)) – Structure & Recipes.
+3.  **Layer 6: Organs (This Package)** – CMS Integration & Themes.
+
+> **The Golden Rule**: Tokens define *meaning*. UI defines *structure*. Organs define *delivery* for specific engines like WordPress.
+
+---
 
 ## Contributing
 
