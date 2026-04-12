@@ -4,7 +4,7 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/phcdevworks/spectre-shell-wordpress)](https://github.com/phcdevworks/spectre-shell-wordpress/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-shell-wordpress)](LICENSE)
 
-`@phcdevworks/spectre-shell-wordpress` is a reusable template for building modern, high-performance WordPress themes for Spectre applications.
+`@phcdevworks/spectre-shell-wordpress` is a reusable template for building modern, high-performance WordPress themes.
 
 Maintained by PHCDevworks as part of the Spectre suite, it acts as the "Organs" layer (Layer 6), providing the CMS-specific structure and integration logic. The package bridges modern frontend tooling (Vite, TypeScript, Tailwind CSS 4) with the WordPress theme hierarchy, ensuring Spectre standards are strictly maintained in a CMS environment.
 
