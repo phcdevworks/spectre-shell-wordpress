@@ -16,7 +16,11 @@ Spectre WordPress Themes is a WordPress theme foundation with a Vite build pipel
 
     npm run build
 
-4. Validate PHP syntax:
+4. Validate the theme asset contract:
+
+    npm run check:assets
+
+5. Validate PHP syntax:
 
     npm run lint:php
 
@@ -41,6 +45,7 @@ The deployable WordPress theme directory in this repository is "spectre-theme/".
 Run the smallest relevant checks locally:
 
 - "npm run build"
+- "npm run check:assets"
 - "npm run lint"
 - "npm run lint:php"
 

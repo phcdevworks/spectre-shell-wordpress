@@ -28,6 +28,7 @@
                 'theme_location' => 'primary',
                 'menu_class' => 'flex space-x-4',
                 'container' => false,
+                'fallback_cb' => 'spectre_wordpress_themes_primary_menu_fallback',
             ));
             ?>
         </nav>

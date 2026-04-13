@@ -36,6 +36,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "check:assets": "node scripts/check-theme-asset-contract.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

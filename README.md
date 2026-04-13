@@ -70,6 +70,10 @@ The deployable WordPress theme directory in this repository is "spectre-theme/".
 
     npm run build
 
+6. Validate the theme asset contract after a production build when you change entrypoints or Vite output behavior.
+
+    npm run check:assets
+
 The production build writes hashed assets and .vite/manifest.json to spectre-theme/dist, and the theme uses that manifest to enqueue the compiled files.
 
 ## Notes for implementers

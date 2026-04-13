@@ -5,6 +5,10 @@
         <?php while (have_posts()) : the_post(); ?>
             <?php get_template_part('template-parts/content', 'single'); ?>
 
+            <?php if (comments_open() || get_comments_number()) : ?>
+                <?php comments_template(); ?>
+            <?php endif; ?>
+
             <nav class='flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 text-sm shadow-sm md:flex-row md:items-center md:justify-between'>
                 <div><?php previous_post_link('%link', '&larr; %title'); ?></div>
                 <div><?php next_post_link('%link', '%title &rarr;'); ?></div>

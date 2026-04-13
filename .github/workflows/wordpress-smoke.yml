@@ -1,0 +1,121 @@
+name: WordPress Smoke Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: wordpress
+          MYSQL_USER: wordpress
+          MYSQL_PASSWORD: wordpress
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uwordpress -pwordpress"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mysqli
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build theme assets
+        run: npm run build
+
+      - name: Validate theme asset contract
+        run: npm run check:assets
+
+      - name: Download WP-CLI
+        run: curl -fsSL -o wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+      - name: Prepare WordPress
+        run: |
+          php wp-cli.phar core download --path=wp --allow-root
+          mkdir -p wp/wp-content/themes
+          cp -R spectre-theme wp/wp-content/themes/spectre-theme
+          php wp-cli.phar config create \
+            --path=wp \
+            --dbname=wordpress \
+            --dbuser=wordpress \
+            --dbpass=wordpress \
+            --dbhost=127.0.0.1:3306 \
+            --skip-check \
+            --allow-root
+          php wp-cli.phar db create --path=wp --allow-root
+          php wp-cli.phar core install \
+            --path=wp \
+            --url=http://127.0.0.1:8080 \
+            --title="Spectre Theme Smoke Test" \
+            --admin_user=admin \
+            --admin_password=password \
+            --admin_email=admin@example.com \
+            --skip-email \
+            --allow-root
+          php wp-cli.phar theme activate spectre-theme --path=wp --allow-root
+          php wp-cli.phar option update blog_public 0 --path=wp --allow-root
+          SMOKE_POST_ID=$(php wp-cli.phar post create \
+            --path=wp \
+            --post_type=post \
+            --post_status=publish \
+            --post_title="Smoke Post" \
+            --post_name="smoke-post" \
+            --post_content="Smoke post content." \
+            --porcelain \
+            --allow-root)
+          SMOKE_PAGE_ID=$(php wp-cli.phar post create \
+            --path=wp \
+            --post_type=page \
+            --post_status=publish \
+            --post_title="Smoke Page" \
+            --post_name="smoke-page" \
+            --post_content="Smoke page content." \
+            --porcelain \
+            --allow-root)
+          echo "SMOKE_POST_ID=${SMOKE_POST_ID}" >> "$GITHUB_ENV"
+          echo "SMOKE_PAGE_ID=${SMOKE_PAGE_ID}" >> "$GITHUB_ENV"
+
+      - name: Start PHP server
+        run: |
+          php -S 127.0.0.1:8080 -t wp >php-server.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8080/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat php-server.log
+          exit 1
+
+      - name: Verify core routes
+        run: |
+          curl -fsS http://127.0.0.1:8080/ >/dev/null
+          curl -fsS "http://127.0.0.1:8080/?p=${SMOKE_POST_ID}" >/dev/null
+          curl -fsS "http://127.0.0.1:8080/?page_id=${SMOKE_PAGE_ID}" >/dev/null
+          curl -fsS 'http://127.0.0.1:8080/?s=hello' >/dev/null
+          test "$(curl -sS -o /dev/null -w '%{http_code}' 'http://127.0.0.1:8080/?p=999999')" = "404"

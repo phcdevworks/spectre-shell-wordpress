@@ -17,6 +17,20 @@ function spectre_wordpress_themes_setup() {
 }
 add_action("after_setup_theme", "spectre_wordpress_themes_setup");
 
+function spectre_wordpress_themes_primary_menu_fallback($args) {
+    if (empty($args["theme_location"]) || "primary" !== $args["theme_location"]) {
+        return;
+    }
+
+    echo "<div class='text-sm text-slate-300'>";
+    wp_page_menu(array(
+        "container" => false,
+        "menu_class" => "flex flex-wrap items-center gap-4",
+        "show_home" => true,
+    ));
+    echo "</div>";
+}
+
 function spectre_wordpress_themes_enqueue_assets() {
     $is_dev = function_exists("wp_get_environment_type")
         ? wp_get_environment_type() === "development"
