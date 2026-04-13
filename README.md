@@ -4,129 +4,76 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/phcdevworks/spectre-wordpress-themes)](https://github.com/phcdevworks/spectre-wordpress-themes/pulls)
 [![License](https://img.shields.io/github/license/phcdevworks/spectre-wordpress-themes)](LICENSE)
 
-`@phcdevworks/spectre-wordpress-themes` is a reusable template for building modern, high-performance WordPress themes.
+@phcdevworks/spectre-wordpress-themes is a WordPress theme foundation for Spectre-based sites. It combines a standard WordPress theme directory with a Vite build pipeline, a TypeScript client entrypoint, and Tailwind CSS so teams can build theme-owned assets with a modern frontend workflow and deliver them through WordPress.
 
-Maintained by PHCDevworks as part of the Spectre suite, it acts as the "Organs" layer (Layer 6), providing the CMS-specific structure and integration logic. The package bridges modern frontend tooling (Vite, TypeScript, Tailwind CSS 4) with the WordPress theme hierarchy, ensuring Spectre standards are strictly maintained in a CMS environment.
+This repository is for developers building custom WordPress themes that need to stay aligned with Spectre tokens and Spectre UI without moving design-system ownership into PHP templates.
 
-This package's source repository is hosted at
-[`phcdevworks/spectre-wordpress-themes`](https://github.com/phcdevworks/spectre-wordpress-themes).
+## What this repository is
 
-## Key capabilities
+- A WordPress theme foundation with Vite-powered asset compilation
+- A TypeScript and Tailwind CSS workspace for theme-owned frontend code
+- A theme runtime that switches between the Vite dev server in development and hashed build assets in production
+- A WordPress integration layer that enqueues the compiled theme assets from spectre-theme
 
-- Vite-powered development with instant HMR
-- TypeScript for type-safe client-side theme development
-- Tailwind CSS 4 with modern `@import` syntax
-- Automatic dev/prod mode detection via `WP_ENV`
-- Manifest-based asset loading with reliable cache-busting
-- WordPress-optimized build output directly to `spectre-theme/dist/`
+## What it owns
 
-## Installation
+- The Vite build configuration for theme assets
+- The TypeScript entrypoint in src/js/main.ts
+- The CSS entrypoint in src/styles/main.css
+- The WordPress theme files in spectre-theme, including asset loading in functions.php
+- The compiled output for theme-owned assets in spectre-theme/dist
 
-Clone or use this template to start a new WordPress theme:
+The build is configured around one JavaScript entry and one CSS entry. In production, the theme resolves those compiled assets from the Vite manifest and serves one compiled JS bundle plus one compiled CSS bundle for the theme-owned frontend surface.
 
-```bash
-git clone https://github.com/phcdevworks/spectre-wordpress-themes.git
-cd spectre-wordpress-themes
-npm install
-```
+## What it does not own
 
-## Quick start
+- Design token definitions
+- Reusable UI component contracts and recipes
+- WordPress core installation, plugin management, or hosting concerns
+- Application state architecture beyond the theme entrypoint
 
-### 1. Configure WordPress Environment
+## Relationship to Spectre packages
 
-Set up your WordPress installation `wp-config.php` to work with the Vite dev server:
+- @phcdevworks/spectre-tokens provides the design tokens consumed by the frontend layer
+- @phcdevworks/spectre-ui provides Spectre UI styles and primitives used by the theme layer
 
-```php
-define('WP_ENV', 'development'); // Enable dev mode
-```
+This repository is where those frontend foundations are delivered through a WordPress theme. The theme should consume Spectre tokens and Spectre UI output, not redefine them.
 
-### 2. Start Development Server
+## Repository structure
 
-```bash
-npm run dev
-```
+- src/js/main.ts contains the theme JavaScript entrypoint
+- src/styles/main.css contains the theme CSS entrypoint
+- spectre-theme contains the WordPress theme files
+- spectre-theme/functions.php handles development and production asset loading
+- spectre-theme/dist receives compiled build output
+- vite.config.ts defines the build and dev-server behavior
 
-This starts the Vite dev server with HMR enabled. Edit files in `src/` and see changes instantly.
+## Development workflow
 
-### 3. Activate Theme in WordPress
+1. Install dependencies.
 
-Link or copy the theme folder to your WordPress installation:
+    npm install
 
-```bash
-ln -s $(pwd)/spectre-theme /path/to/wordpress/wp-content/themes/spectre-theme
-```
+2. Start the Vite dev server.
 
-Then activate the theme in the WordPress admin panel.
+    npm run dev
 
-### 4. Build for Production
+3. Make the theme available to WordPress by linking or copying spectre-theme into wp-content/themes.
 
-```bash
-npm run build
-```
+4. Ensure your WordPress environment is running in development mode so the theme loads assets from the Vite dev server. This repo checks wp_get_environment_type() first and falls back to WP_ENV set to development.
 
-This compiles TypeScript, processes CSS, generates optimized assets, and creates a manifest in `spectre-theme/dist/`. Upload the `spectre-theme/` folder to your production environment.
+5. Build production assets when needed.
 
-## What this package owns
+    npm run build
 
-- Vite build pipeline for WordPress theme assets
-- Tailwind CSS 4 configuration and processing
-- `functions.php` integration for loading correct dev/prod assets
-- Basic WordPress template structure (`index.php`, `header.php`, `footer.php`, etc.)
-- Manifest-based cache-busting implementation for WordPress
+The production build writes hashed assets and .vite/manifest.json to spectre-theme/dist, and the theme uses that manifest to enqueue the compiled files.
 
-## What this package does not own
+## Notes for implementers
 
-- Core UI components (owned by `@phcdevworks/spectre-ui`)
-- Design tokens or color definitions (owned by `@phcdevworks/spectre-tokens`)
-- WordPress core setup, database management, or hosting configuration
-- General state management or reactive primitives (owned by `@phcdevworks/spectre-signals`)
-
-The CMS delivers; the Arsenal defines. This package is strictly legacy-forbidden from redefining design tokens or hardcoding hex colors.
-
-## Relationship to the rest of Spectre
-
-Spectre keeps responsibilities separate using a strict 8-Layer Arsenal hierarchy:
-
-- `@phcdevworks/spectre-tokens` (Layer 1: DNA) owns visual language, semantic roles, and token contracts
-- `@phcdevworks/spectre-ui` (Layer 2: Blueprint) owns token-driven styling, Tailwind helpers, and class recipes
-- `@phcdevworks/spectre-shell` owns thin shell composition and runtime surface
-- `@phcdevworks/spectre-shell-router` owns URL resolution and navigation primitives
-- `@phcdevworks/spectre-signals` owns reactive primitives only
-- `@phcdevworks/spectre-wordpress-themes` (Layer 6: Organs) owns CMS integration and theme delivery
-
-That separation keeps the tokens and UI components portable and prevents the WordPress integration from defining design logic.
-
-## Development
-
-Install dependencies, then run the standard scripts:
-
-```bash
-npm run dev    # Start Vite with HMR
-npm run build  # Build production assets
-```
-
-Key source areas:
-
-- `src/js/main.ts` – Main client script entry point
-- `src/styles/main.css` – Tailwind and styling entry point
-- `spectre-theme/functions.php` – Asset enqueuing logic
-- `vite.config.ts` – Vite build and manifest settings
-- `tailwind.config.ts` – Tailwind content and preset configuration
-
-## Contributing
-
-When contributing:
-
-- keep the PHP templates focused on structure and data fetching
-- prefer implementation clarity over abstraction-heavy design
-- avoid redefining design tokens or colors directly in the theme
-- ensure `npm run build` succeeds and produces the `.vite/manifest.json` before opening a pull request
-
-Standard WordPress coding guidelines apply to PHP files. Scope discipline is part of the package contract. See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+- Keep PHP templates focused on structure, data access, and WordPress integration
+- Keep theme styling and client behavior in src
+- Treat the theme as the owner of its compiled CSS and JS bundles, not the owner of Spectre token or component definitions
 
 ## License
 
 MIT © PHCDevworks. See [LICENSE](LICENSE).
-
-
-
