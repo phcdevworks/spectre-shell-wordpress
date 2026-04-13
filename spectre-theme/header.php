@@ -16,7 +16,7 @@
             <?php else : ?>
                 <h1 class="text-2xl font-bold">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white hover:text-gray-300">
-                        <?php bloginfo('name'); ?>
+                        <?php echo esc_html(get_bloginfo('name')); ?>
                     </a>
                 </h1>
             <?php endif; ?>

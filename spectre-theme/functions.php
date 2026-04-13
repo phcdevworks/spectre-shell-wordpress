@@ -55,6 +55,13 @@ function spectre_wordpress_themes_enqueue_assets() {
     }
 
     $manifest = json_decode(file_get_contents($manifest_path), true);
+    if (!is_array($manifest)) {
+        if (defined("WP_DEBUG") && WP_DEBUG) {
+            error_log("Invalid Vite manifest JSON: " . $manifest_path);
+        }
+        return;
+    }
+
     $main_entry = $manifest["src/js/main.ts"] ?? null;
 
     if (!$main_entry || empty($main_entry["file"])) {

@@ -39,6 +39,8 @@ The build is configured around one JavaScript entry and one CSS entry. In produc
 
 This repository is where those frontend foundations are delivered through a WordPress theme. The theme should consume Spectre tokens and Spectre UI output, not redefine them.
 
+By default, the theme stylesheet imports the Spectre UI base bundle, so a fresh install starts from Spectre UI instead of a generic Tailwind-only baseline.
+
 ## Repository structure
 
 - src/js/main.ts contains the theme JavaScript entrypoint

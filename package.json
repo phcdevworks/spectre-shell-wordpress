@@ -1,7 +1,7 @@
 {
   "name": "@phcdevworks/spectre-wordpress-themes",
   "version": "0.0.1",
-  "description": "Vite template for WordPress theme development with TypeScript and Tailwind CSS 4",
+  "description": "Spectre-backed WordPress theme foundation with Vite, TypeScript, and Tailwind CSS 4",
   "type": "module",
   "keywords": [
     "vite-template",
