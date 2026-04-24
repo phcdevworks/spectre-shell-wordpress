@@ -38,8 +38,8 @@
     "build": "tsc && vite build",
     "check:assets": "node scripts/check-theme-asset-contract.mjs",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint --flag unstable_native_nodejs_ts_config .",
+    "lint:fix": "eslint --flag unstable_native_nodejs_ts_config . --fix",
     "lint:php": "find spectre-theme -name \"*.php\" -print0 | xargs -0 -n1 php -l",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\""
   },

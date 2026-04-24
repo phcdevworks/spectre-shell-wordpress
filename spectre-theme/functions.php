@@ -86,15 +86,12 @@ function spectre_wordpress_themes_enqueue_assets() {
     }
 
     if (!empty($main_entry["css"]) && is_array($main_entry["css"])) {
-        foreach ($main_entry["css"] as $css_file) {
-            wp_enqueue_style(
-                "spectre-wordpress-themes-style",
-                get_template_directory_uri() . "/dist/" . $css_file,
-                array(),
-                null
-            );
-            break;
-        }
+        wp_enqueue_style(
+            "spectre-wordpress-themes-style",
+            get_template_directory_uri() . "/dist/" . $main_entry["css"][0],
+            array(),
+            null
+        );
     }
 
     wp_enqueue_script(

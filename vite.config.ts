@@ -9,7 +9,7 @@ export default defineConfig({
     outDir: 'spectre-theme/dist',
     emptyOutDir: true,
     manifest: true,
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       // The theme owns one JavaScript entry. CSS is emitted from its imports.
       input: resolve(__dirname, 'src/js/main.ts'),
