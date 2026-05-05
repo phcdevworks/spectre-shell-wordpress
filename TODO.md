@@ -4,7 +4,35 @@ This todo list is aligned to the current repository and the roadmap in
 `ROADMAP.md`. It is scoped to WordPress.org submission readiness, block editor
 support, Spectre Icons integration, and CI.
 
+## Recently Completed
+
+- Restored design-system alignment across the WordPress shell File targets:
+  - `src/styles/main.css`
+  - `spectre-theme/*.php`
+  - `spectre-theme/template-parts/*.php`
+  - `spectre-theme/theme.json` Acceptance criteria:
+  - PHP templates use semantic shell classes and WordPress data/accessibility APIs
+  - Theme-specific CSS is centralized in `src/styles/main.css`
+  - Theme shell CSS uses Spectre `var(--sp-*)` variables instead of local values
+  - `theme.json` layout settings consume Spectre layout tokens
+
+- Added drift-prevention documentation File targets:
+  - `AGENTS.md`
+  - `README.md` Acceptance criteria:
+  - Documents the "CMS delivers; design system defines" boundary
+  - Lists what is allowed and disallowed in PHP templates and theme CSS
+  - Provides a drift-scan command for future visual/template changes
+
 ## P0: WordPress Deployment Readiness / Must-Do
+
+- Add automated design-system drift checks File targets:
+  - `package.json`
+  - `scripts/`
+  - `.github/workflows/ci.yml` Acceptance criteria:
+  - Adds an npm script for the drift scan documented in `AGENTS.md` and `README.md`
+  - CI runs the drift scan on push and PR
+  - The check allows token-backed references such as `var(--sp-*)` and
+    `theme.json` token presets while failing hardcoded visual values
 
 - Add required WordPress.org theme headers and compliance files File targets:
   - `spectre-theme/style.css`
@@ -29,7 +57,8 @@ support, Spectre Icons integration, and CI.
   - `spectre-theme/sidebar.php`
   - `spectre-theme/functions.php` Acceptance criteria:
   - All WordPress standard template hierarchy entries are covered
-  - Templates use Spectre UI classes correctly
+  - Templates remain structural and use token-backed Spectre shell classes
+  - Reusable controls use Spectre web components where available
 
 - Integrate Spectre Icons plugin in theme templates File targets:
   - `spectre-theme/` template files
@@ -52,6 +81,7 @@ support, Spectre Icons integration, and CI.
   - `.github/workflows/ci.yml` Acceptance criteria:
   - CI runs `npm run build` and `npm run check:assets` on push and PR
   - CI runs `npm run lint:php` for PHP syntax validation
+  - CI runs the automated design-system drift check
 
 ## P1: Developer Experience and Ecosystem Integration
 
@@ -87,18 +117,19 @@ support, Spectre Icons integration, and CI.
 
 ## Explicitly Out of Scope
 
-- Do not redefine token values or CSS locally
+- Do not redefine token values or local design values
 - Do not add PHP plugin logic (belongs in plugin repos like spectre-icons)
 - Do not add WooCommerce templates without proven product need
 
 ## Recommended Execution Order
 
-1. Theme headers, readme.txt, screenshot.png
-2. PHP template coverage
-3. Spectre Icons integration
-4. Gutenberg / theme.json
-5. CI pipeline
-6. WordPress dev workflow docs
-7. Elementor integration
-8. Shell router evaluation
-9. Child theme starter
+1. Automated design-system drift checks
+2. Theme headers, readme.txt, screenshot.png
+3. PHP template coverage review
+4. Spectre Icons integration
+5. Gutenberg / theme.json editor verification
+6. CI pipeline
+7. WordPress dev workflow docs
+8. Elementor integration
+9. Shell router evaluation
+10. Child theme starter
