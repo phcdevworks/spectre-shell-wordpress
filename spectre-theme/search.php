@@ -2,8 +2,8 @@
 
 <main class='container mx-auto space-y-10 px-4 py-10'>
     <header class='space-y-3'>
-        <p class='text-sm font-medium uppercase tracking-[0.2em] text-sky-700'><?php esc_html_e('Search', 'spectre-wordpress-themes'); ?></p>
-        <h1 class='text-4xl font-semibold tracking-tight text-slate-900'>
+        <p class='text-sm font-medium uppercase tracking-[0.2em] text-(--sp-text-on-page-brand)'><?php esc_html_e('Search', 'spectre-wordpress-themes'); ?></p>
+        <h1 class='text-4xl font-semibold tracking-tight text-(--sp-text-on-page-default)'>
             <?php printf(esc_html__('Results for: %s', 'spectre-wordpress-themes'), esc_html(get_search_query())); ?>
         </h1>
     </header>

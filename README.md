@@ -62,19 +62,51 @@ The deployable WordPress theme directory in this repository is "spectre-theme/".
 
     npm run dev
 
-3. Make the theme available to WordPress by linking or copying spectre-theme into wp-content/themes.
+3. Make the theme available to WordPress by symlinking or copying spectre-theme into your local WordPress install.
 
-4. Ensure your WordPress environment is running in development mode so the theme loads assets from the Vite dev server. This repo checks wp_get_environment_type() first and falls back to WP_ENV set to development.
+    ln -s /path/to/spectre-wordpress-themes/spectre-theme /path/to/wordpress/wp-content/themes/spectre-theme
 
-5. Build production assets when needed.
+4. Set your WordPress environment to development mode so the theme loads assets from the Vite dev server instead of the dist folder. Add one of the following to wp-config.php:
+
+    define('WP_ENV', 'development');
+
+    Or use the WordPress environment type API (WordPress 5.5+):
+
+    define('WP_ENVIRONMENT_TYPE', 'development');
+
+    The Vite dev server runs on http://localhost:5173 by default. To use a different port, define the server URL in wp-config.php:
+
+    define('VITE_DEV_SERVER', 'http://localhost:5174');
+
+5. CSS and JavaScript changes in src/ are reflected instantly in the browser via HMR without a page reload.
+
+6. Build production assets when ready to deploy.
 
     npm run build
 
-6. Validate the theme asset contract after a production build when you change entrypoints or Vite output behavior.
+7. Validate the theme asset contract after a production build when you change entrypoints or Vite output behavior.
 
     npm run check:assets
 
 The production build writes hashed assets and .vite/manifest.json to spectre-theme/dist, and the theme uses that manifest to enqueue the compiled files.
+
+## Spectre Icons integration
+
+This theme is compatible with the [spectre-icons](https://wordpress.org/plugins/spectre-icons/) WordPress plugin. Once the plugin is installed and activated, the `[spectre-icon]` shortcode is available in any template or content area.
+
+The theme footer automatically renders icon links when the plugin is active:
+
+    [spectre-icon name="github" size="20"]
+    [spectre-icon name="twitter" size="20"]
+    [spectre-icon name="linkedin" size="20"]
+
+To check availability before rendering icons in a custom template:
+
+    <?php if (spectre_wordpress_themes_has_icons()) : ?>
+        <?php echo do_shortcode('[spectre-icon name="arrow-right" size="16"]'); ?>
+    <?php endif; ?>
+
+This pattern works in both the classic editor and the block editor.
 
 ## Notes for implementers
 

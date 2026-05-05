@@ -2,9 +2,9 @@
 
 <main class='container mx-auto space-y-10 px-4 py-10'>
     <header class='space-y-3'>
-        <p class='text-sm font-medium uppercase tracking-[0.2em] text-sky-700'><?php esc_html_e('Journal', 'spectre-wordpress-themes'); ?></p>
-        <h1 class='text-4xl font-semibold tracking-tight text-slate-900'><?php echo esc_html(single_post_title('', false)); ?></h1>
-        <p class='max-w-2xl text-slate-600'><?php esc_html_e('The latest posts from this site.', 'spectre-wordpress-themes'); ?></p>
+        <p class='text-sm font-medium uppercase tracking-[0.2em] text-(--sp-text-on-page-brand)'><?php esc_html_e('Journal', 'spectre-wordpress-themes'); ?></p>
+        <h1 class='text-4xl font-semibold tracking-tight text-(--sp-text-on-page-default)'><?php echo esc_html(single_post_title('', false)); ?></h1>
+        <p class='max-w-2xl text-(--sp-text-on-page-muted)'><?php esc_html_e('The latest posts from this site.', 'spectre-wordpress-themes'); ?></p>
     </header>
 
     <?php if (have_posts()) : ?>

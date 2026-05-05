@@ -2,10 +2,10 @@
     <?php return; ?>
 <?php endif; ?>
 
-<section id="comments" class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:p-10">
+<section id="comments" class="rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-8 shadow-sm md:p-10">
     <?php if (have_comments()) : ?>
         <header class="space-y-2">
-            <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
+            <h2 class="text-2xl font-semibold tracking-tight text-(--sp-text-on-page-default)">
                 <?php
                 printf(
                     esc_html(
@@ -34,7 +34,7 @@
     <?php endif; ?>
 
     <?php if (!comments_open() && get_comments_number()) : ?>
-        <p class="mt-6 text-sm text-slate-600"><?php esc_html_e('Comments are closed.', 'spectre-wordpress-themes'); ?></p>
+        <p class="mt-6 text-sm text-(--sp-text-on-page-muted)"><?php esc_html_e('Comments are closed.', 'spectre-wordpress-themes'); ?></p>
     <?php endif; ?>
 
     <div class="mt-8">

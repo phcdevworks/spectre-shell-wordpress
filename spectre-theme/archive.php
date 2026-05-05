@@ -2,10 +2,10 @@
 
 <main class='container mx-auto space-y-10 px-4 py-10'>
     <header class='space-y-3'>
-        <p class='text-sm font-medium uppercase tracking-[0.2em] text-sky-700'><?php esc_html_e('Archive', 'spectre-wordpress-themes'); ?></p>
-        <h1 class='text-4xl font-semibold tracking-tight text-slate-900'><?php the_archive_title(); ?></h1>
+        <p class='text-sm font-medium uppercase tracking-[0.2em] text-(--sp-text-on-page-brand)'><?php esc_html_e('Archive', 'spectre-wordpress-themes'); ?></p>
+        <h1 class='text-4xl font-semibold tracking-tight text-(--sp-text-on-page-default)'><?php the_archive_title(); ?></h1>
         <?php if (term_description()) : ?>
-            <div class='max-w-2xl text-slate-600'><?php echo wp_kses_post(term_description()); ?></div>
+            <div class='max-w-2xl text-(--sp-text-on-page-muted)'><?php echo wp_kses_post(term_description()); ?></div>
         <?php endif; ?>
     </header>
 

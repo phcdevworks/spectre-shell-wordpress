@@ -1,6 +1,8 @@
 import '../styles/main.css'
+import { defineSpectreComponents } from '@phcdevworks/spectre-components'
 
-// The theme ships one JS entry and one CSS bundle emitted from this import.
+defineSpectreComponents()
+
 if (import.meta.hot) {
   import.meta.hot.accept()
 }

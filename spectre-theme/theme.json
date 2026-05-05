@@ -1,0 +1,108 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "defaultPalette": false,
+            "defaultGradients": false,
+            "palette": [
+                { "slug": "sp-surface-page",    "color": "var(--sp-surface-page)",         "name": "Surface: Page" },
+                { "slug": "sp-surface-card",    "color": "var(--sp-surface-card)",         "name": "Surface: Card" },
+                { "slug": "sp-surface-alt",     "color": "var(--sp-surface-alternate)",    "name": "Surface: Alternate" },
+                { "slug": "sp-text-default",    "color": "var(--sp-text-on-page-default)", "name": "Text: Default" },
+                { "slug": "sp-text-muted",      "color": "var(--sp-text-on-page-muted)",   "name": "Text: Muted" },
+                { "slug": "sp-text-subtle",     "color": "var(--sp-text-on-page-subtle)",  "name": "Text: Subtle" },
+                { "slug": "sp-text-brand",      "color": "var(--sp-text-on-page-brand)",   "name": "Text: Brand" },
+                { "slug": "sp-brand-500",       "color": "var(--sp-color-brand-500)",      "name": "Brand 500" },
+                { "slug": "sp-brand-600",       "color": "var(--sp-color-brand-600)",      "name": "Brand 600" },
+                { "slug": "sp-brand-700",       "color": "var(--sp-color-brand-700)",      "name": "Brand 700" },
+                { "slug": "sp-neutral-200",     "color": "var(--sp-color-neutral-200)",    "name": "Neutral 200" },
+                { "slug": "sp-neutral-700",     "color": "var(--sp-color-neutral-700)",    "name": "Neutral 700" },
+                { "slug": "sp-neutral-800",     "color": "var(--sp-color-neutral-800)",    "name": "Neutral 800" },
+                { "slug": "sp-neutral-900",     "color": "var(--sp-color-neutral-900)",    "name": "Neutral 900" },
+                { "slug": "sp-accent-500",      "color": "var(--sp-color-accent-500)",     "name": "Accent 500" },
+                { "slug": "sp-accent-600",      "color": "var(--sp-color-accent-600)",     "name": "Accent 600" },
+                { "slug": "sp-success-500",     "color": "var(--sp-color-success-500)",    "name": "Success" },
+                { "slug": "sp-warning-500",     "color": "var(--sp-color-warning-500)",    "name": "Warning" },
+                { "slug": "sp-error-500",       "color": "var(--sp-color-error-500)",      "name": "Error" }
+            ]
+        },
+        "typography": {
+            "defaultFontSizes": false,
+            "fontFamilies": [
+                { "slug": "sp-sans",  "name": "Sans",  "fontFamily": "var(--sp-font-family-sans)" },
+                { "slug": "sp-serif", "name": "Serif", "fontFamily": "var(--sp-font-family-serif)" },
+                { "slug": "sp-mono",  "name": "Mono",  "fontFamily": "var(--sp-font-family-mono)" }
+            ],
+            "fontSizes": [
+                { "slug": "sp-xs",  "size": "var(--sp-font-xs-size)",  "name": "XS" },
+                { "slug": "sp-sm",  "size": "var(--sp-font-sm-size)",  "name": "SM" },
+                { "slug": "sp-md",  "size": "var(--sp-font-md-size)",  "name": "MD" },
+                { "slug": "sp-lg",  "size": "var(--sp-font-lg-size)",  "name": "LG" },
+                { "slug": "sp-xl",  "size": "var(--sp-font-xl-size)",  "name": "XL" },
+                { "slug": "sp-2xl", "size": "var(--sp-font-2xl-size)", "name": "2XL" },
+                { "slug": "sp-3xl", "size": "var(--sp-font-3xl-size)", "name": "3XL" },
+                { "slug": "sp-4xl", "size": "var(--sp-font-4xl-size)", "name": "4XL" },
+                { "slug": "sp-5xl", "size": "var(--sp-font-5xl-size)", "name": "5XL" },
+                { "slug": "sp-6xl", "size": "var(--sp-font-6xl-size)", "name": "6XL" }
+            ]
+        },
+        "spacing": {
+            "defaultSpacingSizes": false,
+            "spacingSizes": [
+                { "slug": "sp-0",  "size": "var(--sp-space-0)",  "name": "0" },
+                { "slug": "sp-4",  "size": "var(--sp-space-4)",  "name": "4" },
+                { "slug": "sp-8",  "size": "var(--sp-space-8)",  "name": "8" },
+                { "slug": "sp-12", "size": "var(--sp-space-12)", "name": "12" },
+                { "slug": "sp-16", "size": "var(--sp-space-16)", "name": "16" },
+                { "slug": "sp-20", "size": "var(--sp-space-20)", "name": "20" },
+                { "slug": "sp-24", "size": "var(--sp-space-24)", "name": "24" },
+                { "slug": "sp-32", "size": "var(--sp-space-32)", "name": "32" },
+                { "slug": "sp-40", "size": "var(--sp-space-40)", "name": "40" },
+                { "slug": "sp-48", "size": "var(--sp-space-48)", "name": "48" }
+            ]
+        },
+        "shadow": {
+            "defaultPresets": false,
+            "presets": [
+                { "slug": "sp-sm", "shadow": "var(--sp-shadow-sm)", "name": "SM" },
+                { "slug": "sp-md", "shadow": "var(--sp-shadow-md)", "name": "MD" },
+                { "slug": "sp-lg", "shadow": "var(--sp-shadow-lg)", "name": "LG" }
+            ]
+        },
+        "layout": {
+            "contentSize": "768px",
+            "wideSize": "1200px"
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--sp-surface-page)",
+            "text": "var(--sp-text-on-page-default)"
+        },
+        "typography": {
+            "fontFamily": "var(--sp-font-family-sans)",
+            "fontSize": "var(--sp-font-md-size)",
+            "lineHeight": "var(--sp-font-md-line-height)"
+        },
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--sp-text-on-page-brand)"
+                },
+                ":hover": {
+                    "color": {
+                        "text": "var(--sp-color-brand-700)"
+                    }
+                }
+            },
+            "h1": { "typography": { "fontSize": "var(--sp-font-4xl-size)", "lineHeight": "var(--sp-font-4xl-line-height)", "fontWeight": "var(--sp-font-4xl-weight)" } },
+            "h2": { "typography": { "fontSize": "var(--sp-font-3xl-size)", "lineHeight": "var(--sp-font-3xl-line-height)", "fontWeight": "var(--sp-font-3xl-weight)" } },
+            "h3": { "typography": { "fontSize": "var(--sp-font-2xl-size)", "lineHeight": "var(--sp-font-2xl-line-height)", "fontWeight": "var(--sp-font-2xl-weight)" } },
+            "h4": { "typography": { "fontSize": "var(--sp-font-xl-size)",  "lineHeight": "var(--sp-font-xl-line-height)",  "fontWeight": "var(--sp-font-xl-weight)" } },
+            "h5": { "typography": { "fontSize": "var(--sp-font-lg-size)",  "lineHeight": "var(--sp-font-lg-line-height)",  "fontWeight": "var(--sp-font-lg-weight)" } },
+            "h6": { "typography": { "fontSize": "var(--sp-font-md-size)",  "lineHeight": "var(--sp-font-md-line-height)",  "fontWeight": "var(--sp-font-md-weight)" } }
+        }
+    }
+}
