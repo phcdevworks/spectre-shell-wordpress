@@ -28,9 +28,9 @@ function spectre_wordpress_themes_widgets_init() {
         "name"          => __("Main Sidebar", "spectre-wordpress-themes"),
         "id"            => "sidebar-main",
         "description"   => __("Widgets in this area appear in the sidebar.", "spectre-wordpress-themes"),
-        "before_widget" => '<section id="%1$s" class="widget %2$s rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-(--sp-space-24) shadow-sm">',
+        "before_widget" => '<section id="%1$s" class="widget %2$s spectre-widget">',
         "after_widget"  => "</section>",
-        "before_title"  => '<h3 class="mb-(--sp-space-16) text-sm font-semibold uppercase tracking-widest text-(--sp-text-on-page-subtle)">',
+        "before_title"  => '<h3 class="spectre-widget-title">',
         "after_title"   => "</h3>",
     ));
 }
@@ -41,10 +41,10 @@ function spectre_wordpress_themes_primary_menu_fallback($args) {
         return;
     }
 
-    echo "<div class='text-sm text-(--sp-color-neutral-300)'>";
+    echo "<div class='spectre-menu-fallback'>";
     wp_page_menu(array(
         "container" => false,
-        "menu_class" => "flex flex-wrap items-center gap-(--sp-space-16)",
+        "menu_class" => "spectre-navigation-menu",
         "show_home" => true,
     ));
     echo "</div>";

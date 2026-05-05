@@ -8,14 +8,14 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="site-header bg-(--sp-color-neutral-800) text-white p-(--sp-space-16)">
-    <div class="container mx-auto flex justify-between items-center">
-        <div class="site-branding">
+<header class="site-header spectre-site-header">
+    <div class="spectre-site-container spectre-site-header__inner">
+        <div class="site-branding spectre-site-branding">
             <?php if (has_custom_logo()) : ?>
                 <?php the_custom_logo(); ?>
             <?php else : ?>
-                <h1 class="text-2xl font-bold">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white hover:text-(--sp-color-neutral-300)">
+                <h1 class="spectre-site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="spectre-inverse-link">
                         <?php echo esc_html(get_bloginfo('name')); ?>
                     </a>
                 </h1>
@@ -26,7 +26,7 @@
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary',
-                'menu_class' => 'flex space-x-(--sp-space-16)',
+                'menu_class' => 'spectre-navigation-menu',
                 'container' => false,
                 'fallback_cb' => 'spectre_wordpress_themes_primary_menu_fallback',
             ));

@@ -2,10 +2,10 @@
     <?php return; ?>
 <?php endif; ?>
 
-<section id="comments" class="rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-(--sp-space-32) shadow-sm md:p-(--sp-space-40)">
+<section id="comments" class="spectre-panel spectre-comments">
     <?php if (have_comments()) : ?>
-        <header class="space-y-(--sp-space-8)">
-            <h2 class="text-2xl font-semibold tracking-tight text-(--sp-text-on-page-default)">
+        <header>
+            <h2 class="spectre-title-lg">
                 <?php
                 printf(
                     esc_html(
@@ -17,7 +17,7 @@
             </h2>
         </header>
 
-        <ol class="mt-(--sp-space-24) space-y-(--sp-space-24)">
+        <ol class="spectre-comments__list">
             <?php
             wp_list_comments(array(
                 'style' => 'ol',
@@ -34,10 +34,10 @@
     <?php endif; ?>
 
     <?php if (!comments_open() && get_comments_number()) : ?>
-        <p class="mt-(--sp-space-24) text-sm text-(--sp-text-on-page-muted)"><?php esc_html_e('Comments are closed.', 'spectre-wordpress-themes'); ?></p>
+        <p class="spectre-muted"><?php esc_html_e('Comments are closed.', 'spectre-wordpress-themes'); ?></p>
     <?php endif; ?>
 
-    <div class="mt-(--sp-space-32)">
+    <div class="spectre-comments__form">
         <?php comment_form(); ?>
     </div>
 </section>

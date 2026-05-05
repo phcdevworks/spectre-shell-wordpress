@@ -1,24 +1,24 @@
-<article id='post-<?php the_ID(); ?>' <?php post_class('overflow-hidden rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) shadow-sm transition-shadow hover:shadow-md'); ?>>
+<article id='post-<?php the_ID(); ?>' <?php post_class('spectre-card'); ?>>
     <?php if (has_post_thumbnail()) : ?>
-        <a href='<?php echo esc_url(get_permalink()); ?>' class='block'>
-            <?php the_post_thumbnail('large', array('class' => 'h-56 w-full object-cover')); ?>
+        <a href='<?php echo esc_url(get_permalink()); ?>' class='spectre-card__media'>
+            <?php the_post_thumbnail('large'); ?>
         </a>
     <?php endif; ?>
 
-    <div class='space-y-(--sp-space-16) p-(--sp-space-24)'>
-        <div class='text-sm text-(--sp-text-on-page-subtle)'>
+    <div class='spectre-card__body'>
+        <div class='spectre-entry-meta'>
             <time datetime='<?php echo esc_attr(get_the_date('c')); ?>'><?php echo esc_html(get_the_date()); ?></time>
-            <span class='mx-(--sp-space-8)'>&bull;</span>
+            <span class='spectre-entry-meta__separator'>&bull;</span>
             <span><?php echo esc_html(get_the_author()); ?></span>
         </div>
 
-        <h2 class='text-2xl font-semibold tracking-tight text-(--sp-text-on-page-default)'>
-            <a href='<?php echo esc_url(get_permalink()); ?>' class='transition-colors hover:text-(--sp-text-on-page-brand)'>
+        <h2 class='spectre-card__title'>
+            <a href='<?php echo esc_url(get_permalink()); ?>'>
                 <?php the_title(); ?>
             </a>
         </h2>
 
-        <div class='prose max-w-none text-(--sp-text-on-page-muted)'>
+        <div class='spectre-card__excerpt'>
             <?php the_excerpt(); ?>
         </div>
 

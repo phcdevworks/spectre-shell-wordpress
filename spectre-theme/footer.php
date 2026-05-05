@@ -1,11 +1,11 @@
-<footer class="site-footer bg-(--sp-color-neutral-800) text-white p-(--sp-space-32) mt-(--sp-space-48)">
-    <div class="container mx-auto space-y-(--sp-space-24) text-center">
+<footer class="site-footer spectre-site-footer">
+    <div class="spectre-site-container spectre-site-footer__inner">
         <?php if (has_nav_menu('footer')) : ?>
             <nav aria-label="<?php esc_attr_e('Footer Navigation', 'spectre-wordpress-themes'); ?>">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footer',
-                    'menu_class'     => 'flex flex-wrap justify-center gap-(--sp-space-24) text-sm text-(--sp-color-neutral-300)',
+                    'menu_class'     => 'spectre-footer-menu',
                     'container'      => false,
                     'depth'          => 1,
                 ));
@@ -14,14 +14,14 @@
         <?php endif; ?>
 
         <?php if (spectre_wordpress_themes_has_icons()) : ?>
-            <div class="flex justify-center gap-(--sp-space-16) text-(--sp-color-neutral-400)" aria-label="<?php esc_attr_e('Social links', 'spectre-wordpress-themes'); ?>">
+            <div class="spectre-site-footer__social" aria-label="<?php esc_attr_e('Social links', 'spectre-wordpress-themes'); ?>">
                 <?php echo do_shortcode('[spectre-icon name="github" size="20"]'); ?>
                 <?php echo do_shortcode('[spectre-icon name="twitter" size="20"]'); ?>
                 <?php echo do_shortcode('[spectre-icon name="linkedin" size="20"]'); ?>
             </div>
         <?php endif; ?>
 
-        <p class="text-sm text-(--sp-color-neutral-400)">&copy; <?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'spectre-wordpress-themes'); ?></p>
+        <p class="spectre-site-footer__meta">&copy; <?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'spectre-wordpress-themes'); ?></p>
     </div>
 </footer>
 

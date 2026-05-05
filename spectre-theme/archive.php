@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 
-<main class='container mx-auto space-y-(--sp-space-40) px-(--sp-layout-container-padding-inline-sm) md:px-(--sp-layout-container-padding-inline-md) py-(--sp-space-40)'>
-    <header class='space-y-(--sp-space-12)'>
-        <p class='text-sm font-medium uppercase tracking-[0.2em] text-(--sp-text-on-page-brand)'><?php esc_html_e('Archive', 'spectre-wordpress-themes'); ?></p>
-        <h1 class='text-4xl font-semibold tracking-tight text-(--sp-text-on-page-default)'><?php the_archive_title(); ?></h1>
+<main class='spectre-site-container spectre-main'>
+    <header class='spectre-archive-header'>
+        <p class='spectre-eyebrow'><?php esc_html_e('Archive', 'spectre-wordpress-themes'); ?></p>
+        <h1 class='spectre-title-xl'><?php the_archive_title(); ?></h1>
         <?php if (term_description()) : ?>
-            <div class='max-w-2xl text-(--sp-text-on-page-muted)'><?php echo wp_kses_post(term_description()); ?></div>
+            <div class='spectre-muted'><?php echo wp_kses_post(term_description()); ?></div>
         <?php endif; ?>
     </header>
 
     <?php if (have_posts()) : ?>
-        <div class='grid gap-(--sp-space-32) lg:grid-cols-2'>
+        <div class='spectre-post-grid'>
             <?php while (have_posts()) : the_post(); ?>
                 <?php get_template_part('template-parts/content', 'card'); ?>
             <?php endwhile; ?>
