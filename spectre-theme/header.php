@@ -8,7 +8,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="site-header bg-(--sp-color-neutral-800) text-white p-4">
+<header class="site-header bg-(--sp-color-neutral-800) text-white p-(--sp-space-16)">
     <div class="container mx-auto flex justify-between items-center">
         <div class="site-branding">
             <?php if (has_custom_logo()) : ?>
@@ -26,7 +26,7 @@
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary',
-                'menu_class' => 'flex space-x-4',
+                'menu_class' => 'flex space-x-(--sp-space-16)',
                 'container' => false,
                 'fallback_cb' => 'spectre_wordpress_themes_primary_menu_fallback',
             ));

@@ -5,10 +5,10 @@
         </a>
     <?php endif; ?>
 
-    <div class='space-y-4 p-6'>
+    <div class='space-y-(--sp-space-16) p-(--sp-space-24)'>
         <div class='text-sm text-(--sp-text-on-page-subtle)'>
             <time datetime='<?php echo esc_attr(get_the_date('c')); ?>'><?php echo esc_html(get_the_date()); ?></time>
-            <span class='mx-2'>&bull;</span>
+            <span class='mx-(--sp-space-8)'>&bull;</span>
             <span><?php echo esc_html(get_the_author()); ?></span>
         </div>
 

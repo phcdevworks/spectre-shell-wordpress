@@ -1,11 +1,11 @@
-<footer class="site-footer bg-(--sp-color-neutral-800) text-white p-8 mt-12">
-    <div class="container mx-auto space-y-6 text-center">
+<footer class="site-footer bg-(--sp-color-neutral-800) text-white p-(--sp-space-32) mt-(--sp-space-48)">
+    <div class="container mx-auto space-y-(--sp-space-24) text-center">
         <?php if (has_nav_menu('footer')) : ?>
             <nav aria-label="<?php esc_attr_e('Footer Navigation', 'spectre-wordpress-themes'); ?>">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footer',
-                    'menu_class'     => 'flex flex-wrap justify-center gap-6 text-sm text-(--sp-color-neutral-300)',
+                    'menu_class'     => 'flex flex-wrap justify-center gap-(--sp-space-24) text-sm text-(--sp-color-neutral-300)',
                     'container'      => false,
                     'depth'          => 1,
                 ));
@@ -14,7 +14,7 @@
         <?php endif; ?>
 
         <?php if (spectre_wordpress_themes_has_icons()) : ?>
-            <div class="flex justify-center gap-4 text-(--sp-color-neutral-400)" aria-label="<?php esc_attr_e('Social links', 'spectre-wordpress-themes'); ?>">
+            <div class="flex justify-center gap-(--sp-space-16) text-(--sp-color-neutral-400)" aria-label="<?php esc_attr_e('Social links', 'spectre-wordpress-themes'); ?>">
                 <?php echo do_shortcode('[spectre-icon name="github" size="20"]'); ?>
                 <?php echo do_shortcode('[spectre-icon name="twitter" size="20"]'); ?>
                 <?php echo do_shortcode('[spectre-icon name="linkedin" size="20"]'); ?>

@@ -1,4 +1,4 @@
-<form role="search" method="get" class="flex flex-col gap-3 sm:flex-row" action="<?php echo esc_url(home_url('/')); ?>">
+<form role="search" method="get" class="flex flex-col gap-(--sp-space-12) sm:flex-row" action="<?php echo esc_url(home_url('/')); ?>">
     <label class="sr-only" for="spectre-search-field"><?php esc_html_e('Search for:', 'spectre-wordpress-themes'); ?></label>
     <sp-input
         id="spectre-search-field"

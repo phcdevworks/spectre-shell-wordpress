@@ -2,9 +2,9 @@
     <?php return; ?>
 <?php endif; ?>
 
-<section id="comments" class="rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-8 shadow-sm md:p-10">
+<section id="comments" class="rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-(--sp-space-32) shadow-sm md:p-(--sp-space-40)">
     <?php if (have_comments()) : ?>
-        <header class="space-y-2">
+        <header class="space-y-(--sp-space-8)">
             <h2 class="text-2xl font-semibold tracking-tight text-(--sp-text-on-page-default)">
                 <?php
                 printf(
@@ -17,7 +17,7 @@
             </h2>
         </header>
 
-        <ol class="mt-6 space-y-6">
+        <ol class="mt-(--sp-space-24) space-y-(--sp-space-24)">
             <?php
             wp_list_comments(array(
                 'style' => 'ol',
@@ -34,10 +34,10 @@
     <?php endif; ?>
 
     <?php if (!comments_open() && get_comments_number()) : ?>
-        <p class="mt-6 text-sm text-(--sp-text-on-page-muted)"><?php esc_html_e('Comments are closed.', 'spectre-wordpress-themes'); ?></p>
+        <p class="mt-(--sp-space-24) text-sm text-(--sp-text-on-page-muted)"><?php esc_html_e('Comments are closed.', 'spectre-wordpress-themes'); ?></p>
     <?php endif; ?>
 
-    <div class="mt-8">
+    <div class="mt-(--sp-space-32)">
         <?php comment_form(); ?>
     </div>
 </section>

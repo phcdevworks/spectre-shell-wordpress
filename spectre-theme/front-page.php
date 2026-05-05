@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<main class='container mx-auto space-y-10 px-4 py-10'>
+<main class='container mx-auto space-y-(--sp-space-40) px-(--sp-layout-container-padding-inline-sm) md:px-(--sp-layout-container-padding-inline-md) py-(--sp-space-40)'>
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
-            <section class='space-y-6'>
-                <header class='space-y-3'>
+            <section class='space-y-(--sp-space-24)'>
+                <header class='space-y-(--sp-space-12)'>
                     <p class='text-sm font-medium uppercase tracking-[0.2em] text-(--sp-text-on-page-brand)'><?php echo esc_html(get_bloginfo('name')); ?></p>
                     <h1 class='text-5xl font-semibold tracking-tight text-(--sp-text-on-page-default)'><?php the_title(); ?></h1>
                     <?php if (has_excerpt()) : ?>
@@ -12,7 +12,7 @@
                     <?php endif; ?>
                 </header>
 
-                <div class='prose max-w-none rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-8 shadow-sm md:p-10'>
+                <div class='prose max-w-none rounded-2xl border border-(--sp-color-neutral-200) bg-(--sp-surface-card) p-(--sp-space-32) shadow-sm md:p-(--sp-space-40)'>
                     <?php the_content(); ?>
                 </div>
             </section>
