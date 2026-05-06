@@ -67,7 +67,7 @@ jobs:
             --dbhost=127.0.0.1:3306 \
             --skip-check \
             --allow-root
-          php wp-cli.phar db create --path=wp --allow-root
+          php wp-cli.phar db check --path=wp --allow-root
           php wp-cli.phar core install \
             --path=wp \
             --url=http://127.0.0.1:8080 \
